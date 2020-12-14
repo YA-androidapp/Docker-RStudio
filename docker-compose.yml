@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  rstudio:
+    image: rocker/rstudio
+    ports:
+      - "8787:8787"
+    environment:
+      # - ADD=shiny(3838ポート)
+      - DISABLE_AUTH=true
+      - PASSWORD=password
+      # - ROOT=TRUE(sudoersに追加)
+      # - USER=USERNAME(rstudio以外に変更する場合)
+    volumes:
+      - .:/home/rstudio/work
